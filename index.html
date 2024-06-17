@@ -92,69 +92,70 @@
                     <h3>Hookah Market 600 баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 250 ₽</p>
-                    <button class="btn" id="btn1">Купить</button>
+                    <button class="btn" id="btn1" data-price="230">Купить</button>
                 </div>
                 <div class="item" id="item2">
                     <h3>Магнит</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 100 ₽</p>
-                    <button class="btn" id="btn2">Купить</button>
+                    <button class="btn" id="btn2" data-price="3-0">Купить</button>
                 </div>
                 <div class="item" id="item3">
                     <h3>Пятерочка 300 Баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 300 ₽</p>
-                    <button class="btn" id="btn3">Купить</button>
+                    <button class="btn" id="btn3" data-price="430">Купить</button>
                 </div>
                 <div class="item" id="item4">
                     <h3>Пятерочка 300 Баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 300 ₽</p>
-                    <button class="btn" id="btn4">Купить</button>
+                    <button class="btn" id="btn4" data-price="130">Купить</button>
                 </div>
                 <div class="item" id="item5">
                     <h3>Hookah Market 600 баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 250 ₽</p>
-                    <button class="btn" id="btn5">Купить</button>
+                    <button class="btn" id="btn5" data-price="2230">Купить</button>
                 </div>
                 <div class="item" id="item6">
                     <h3>Магнит</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 100 ₽</p>
-                    <button class="btn" id="btn6">Купить</button>
+                    <button class="btn" id="btn6" data-price="23430">Купить</button>
                 </div>
                 <div class="item" id="item7">
                     <h3>Пятерочка 300 Баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 300 ₽</p>
-                    <button class="btn" id="btn7">Купить</button>
+                    <button class="btn" id="btn7" data-price="210">Купить</button>
                 </div>
                 <div class="item" id="item8">
                     <h3>Пятерочка 300 Баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 300 ₽</p>
-                    <button class="btn" id="btn8">Купить</button>
+                    <button class="btn" id="btn8" data-price="330">Купить</button>
                 </div>
             </div>
         </div>
     </div>
     <script>
         let tg = window.Telegram.WebApp;
-        let buy = document.getElementsByClassName("btn");
+        const buttons = document.querySelectorAll('.btn');
+        
         tg.expand();
 
-        buy.addEventListener("click", () => {
-            let price = 1000
-            let type = 1
-
-            let data = {
-                price: price,
-                type: type
-            } 
-            
-            tg.sendData(JSON.stringify(data));
-            tg.close();
+        function handleClick(event) {
+            // Получаем цену кнопки из атрибута data-price
+            const price = parseInt(event.target.dataset.price, 10);
+        
+            // Далее выполняем нужные действия с ценой
+            console.log('Цена кнопки:', price);
+        }
+        
+            // Назначаем обработчик события click для каждой кнопки
+        buttons.forEach(button => {
+            button.addEventListener('click', handleClick);
         });
     </script>
 </body>
