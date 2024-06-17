@@ -145,6 +145,15 @@
         tg.expand();
 
         buy.addEventListener("click", () => {
+            let price = 1000
+            let type = 1
+
+            let data = {
+                price: price,
+                type: type
+            } 
+            
+            tg.sendData(JSON.stringify(data));
             tg.close();
         });
     </script>
