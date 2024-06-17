@@ -92,49 +92,49 @@
                     <h3>Hookah Market 600 баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 250 ₽</p>
-                    <button class="btn" id="btn1" data-price="230">Купить</button>
+                    <button class="btn" id="btn1" data-price="230" data-id="1">Купить</button>
                 </div>
                 <div class="item" id="item2">
                     <h3>Магнит</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 100 ₽</p>
-                    <button class="btn" id="btn2" data-price="3-0">Купить</button>
+                    <button class="btn" id="btn2" data-price="3" data-id="2">Купить</button>
                 </div>
                 <div class="item" id="item3">
                     <h3>Пятерочка 300 Баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 300 ₽</p>
-                    <button class="btn" id="btn3" data-price="430">Купить</button>
+                    <button class="btn" id="btn3" data-price="430" data-id="3">Купить</button>
                 </div>
                 <div class="item" id="item4">
                     <h3>Пятерочка 300 Баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 300 ₽</p>
-                    <button class="btn" id="btn4" data-price="130">Купить</button>
+                    <button class="btn" id="btn4" data-price="130" data-id="4">Купить</button>
                 </div>
                 <div class="item" id="item5">
                     <h3>Hookah Market 600 баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 250 ₽</p>
-                    <button class="btn" id="btn5" data-price="2230">Купить</button>
+                    <button class="btn" id="btn5" data-price="2230" data-id="5">Купить</button>
                 </div>
                 <div class="item" id="item6">
                     <h3>Магнит</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 100 ₽</p>
-                    <button class="btn" id="btn6" data-price="23430">Купить</button>
+                    <button class="btn" id="btn6" data-price="23430" data-id="6">Купить</button>
                 </div>
                 <div class="item" id="item7">
                     <h3>Пятерочка 300 Баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 300 ₽</p>
-                    <button class="btn" id="btn7" data-price="210">Купить</button>
+                    <button class="btn" id="btn7" data-price="210" data-id="7">Купить</button>
                 </div>
                 <div class="item" id="item8">
                     <h3>Пятерочка 300 Баллов</h3>
                     <p>Кол-во: 1 шт.</p>
                     <p>Стоимость: 300 ₽</p>
-                    <button class="btn" id="btn8" data-price="330">Купить</button>
+                    <button class="btn" id="btn8" data-price="330" data-id="8">Купить</button>
                 </div>
             </div>
         </div>
@@ -148,9 +148,9 @@
         function handleClick(event) {
             // Получаем цену кнопки из атрибута data-price
             const price = parseInt(event.target.dataset.price, 10);
-        
+            const id = parseInt(event.target.dataset.id, 10);
             // Далее выполняем нужные действия с ценой
-            console.log('Цена кнопки:', price);
+            console.log('Цена кнопки:', price, " ID:", id);
         }
         
             // Назначаем обработчик события click для каждой кнопки
